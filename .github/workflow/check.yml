@@ -6,7 +6,7 @@ jobs:
       steps:
         - name: Checkuot
           uses: actions/checkout@v4
-          name: Install deps
+        - name: Install deps
           run: npm ci
-          name: Iron
+        - name: Iron
           run: npm run iron
