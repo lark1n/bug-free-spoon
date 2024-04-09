@@ -12,3 +12,11 @@ jobs:
             check-latest: true
          - name: build app
            run: go build -o oleksii .
+           env:
+            GOOS: linux
+            GOARCH: amd64
+         - name: Upload Artifact
+           uses: actions/upload-artifact@v4
+           with:
+            name: oleksii-artifact
+            path: oleksii
