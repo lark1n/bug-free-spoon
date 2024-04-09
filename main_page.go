@@ -9,7 +9,7 @@ const Page = `
   </head>
 
   <body>
-    <h1>Hello Oleksii</h1>
+    <h1>Hello</h1>
     <h2>It works!</h2>
   </body>
 </html>
