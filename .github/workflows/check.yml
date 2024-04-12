@@ -43,6 +43,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: oleksii-artifact
+      - run: ls -l
       #- name: 'Tar files'
       #  run: tar -cvf my_files.tar /oleksii
       #- name: 'Upload Artifact'
