@@ -42,8 +42,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ghcr.io/${{github.repository}}:{{github.sha}}
+          tags: ghcr.io/${{github.repository}}:${{github.sha}}
           #более оптимальная запись, registry.com/repo:tag
           #ghcr.io/lark1n/bug-free-spoon:tags
-          #{{github.sha}} дает нам уникальный номер версии, операясь на коммиты
-          
+          #$ {{github.sha}} дает нам уникальный номер версии, операясь на коммиты
