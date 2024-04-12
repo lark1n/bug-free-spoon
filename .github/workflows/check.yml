@@ -44,17 +44,11 @@ jobs:
         with:
           name: oleksii-artifact
       - run: ls -l
-      #- name: 'Tar files'
-      #  run: tar -cvf my_files.tar /oleksii
-      #- name: 'Upload Artifact'
-      #  uses: actions/upload-artifact@v4
-      #  with:
-      #    name: my-artifact
-      #    path: my_files.tar
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           push: true
+          context: "."
           tags: ghcr.io/${{github.repository}}:${{github.sha}}
           #более оптимальная запись, registry.com/repo:tag
           #ghcr.io/lark1n/bug-free-spoon:tags
