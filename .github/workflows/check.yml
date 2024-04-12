@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        #распаковка репозитория
       - uses: actions/setup-go@v5
         with:
           go-version: "1.22"
@@ -22,6 +23,11 @@ jobs:
           path: oleksii
   build_and_push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    needs: 
+      - build_app
     steps:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -29,3 +35,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ github.token }}
           registry: ghcr.io
+          #ссылка на нужный репозиторий
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: ghcr.io/${{github.repository}}:{{github.sha}}
+          #более оптимальная запись, registry.com/repo:tag
+          #ghcr.io/lark1n/bug-free-spoon:tags
+          #{{github.sha}} дает нам уникальный номер версии, операясь на коммиты
+          
