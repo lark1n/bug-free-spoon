@@ -49,6 +49,7 @@ jobs:
         with:
           push: true
           context: "."
+          #указываем папку из которой билдить
           tags: ghcr.io/${{github.repository}}:${{github.sha}}
           #более оптимальная запись, registry.com/repo:tag
           #ghcr.io/lark1n/bug-free-spoon:tags
