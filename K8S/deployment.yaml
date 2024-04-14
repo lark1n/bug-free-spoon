@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: lark1n-app
 spec:
-  replicas: 4
+  replicas: 30
   selector:
     matchLabels:
       app: lark1n-app
