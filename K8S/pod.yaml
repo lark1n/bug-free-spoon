@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lark1n-app
+  labels:
+    app: myapp
+    type: docker
+spec:
+  containers:
+  - name: app-bug-free-spoon
+    image: ghcr.io/lark1n/bug-free-spoon:5fec8ba05d6391291f5e6bf57f628bce2793b0b4
