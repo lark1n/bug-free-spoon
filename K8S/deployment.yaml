@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: lark1n-app
 spec:
-  replicas: 30
+  replicas: 10
   selector:
     matchLabels:
       app: lark1n-app
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: app-bug-free-spoon
-        image: ghcr.io/lark1n/bug-free-spoon:5fec8ba05d6391291f5e6bf57f628bce2793b0b4
+        image: ghcr.io/lark1n/bug-free-spoon:869d306a87d3cfdae7f4b4b6190bfd39abde6f66
         ports:
         - containerPort: 8080
