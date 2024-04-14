@@ -9,8 +9,8 @@ const Page = `
   </head>
 
   <body>
-    <h1>Hello</h1>
-    <h2>It works!</h2>
+    <h1>Hello, username!</h1>
+    <h2>It works on local computer! =)</h2>
   </body>
 </html>
 `
