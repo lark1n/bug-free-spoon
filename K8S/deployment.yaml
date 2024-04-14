@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lark1n-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: lark1n-app
+  template:
+    metadata:
+      labels:
+        app: lark1n-app
+    spec:
+      containers:
+      - name: app-bug-free-spoon
+        image: ghcr.io/lark1n/bug-free-spoon:5fec8ba05d6391291f5e6bf57f628bce2793b0b4
+        ports:
+        - containerPort: 8080
